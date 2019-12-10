@@ -1,11 +1,11 @@
 import sys
 import subprocess
 import shutil
-from . import installLog as logging
+import installLog as logging
 import argparse
 import os
 import shlex
-from .firewallUtilities import FirewallUtilities
+from firewallUtilities import FirewallUtilities
 import time
 import string
 import random

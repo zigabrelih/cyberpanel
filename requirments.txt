@@ -34,8 +34,6 @@ prettytable==0.7.2
 psutil==5.4.3
 ptyprocess==0.6.0
 pycparser==2.18
-pycurl==7.19.0
-pydns==3.2.1
 pygpgme==0.3
 pyOpenSSL==17.5.0
 pyRFC3339==1.1
