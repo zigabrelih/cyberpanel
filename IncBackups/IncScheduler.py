@@ -10,8 +10,8 @@ try:
     django.setup()
 except:
     pass
-from IncBackupsControl import IncJobs
-from IncBackups.models import BackupJob
+from .IncBackupsControl import IncJobs
+from .IncBackups.models import BackupJob
 from random import randint
 import argparse
 try:
@@ -82,7 +82,7 @@ class IncScheduler():
 
                                     logging.statusWriter(IncScheduler.logPath, 'Failed backup for %s, error: %s.' % (web.website, result), 1)
                                     break
-        except BaseException, msg:
+        except BaseException as msg:
             logging.writeToFile(str(msg))
 
 

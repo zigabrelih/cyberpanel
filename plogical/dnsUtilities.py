@@ -7,12 +7,12 @@ try:
     django.setup()
 except:
     pass
-import CyberCPLogFileWriter as logging
+from . import CyberCPLogFileWriter as logging
 import subprocess
 import shlex
 try:
     from dns.models import Domains,Records
-    from processUtilities import ProcessUtilities
+    from .processUtilities import ProcessUtilities
     from manageServices.models import PDNSStatus, SlaveServers
 except:
     pass
@@ -380,7 +380,7 @@ class DNS:
                 command = 'sudo systemctl restart pdns'
                 ProcessUtilities.executioner(command)
 
-        except BaseException, msg:
+        except BaseException as msg:
             logging.CyberCPLogFileWriter.writeToFile(
                 "We had errors while creating DNS records for: " + domain + ". Error message: " + str(msg))
 
@@ -416,7 +416,7 @@ class DNS:
                 command = 'sudo systemctl restart pdns'
                 ProcessUtilities.executioner(command)
 
-        except BaseException, msg:
+        except BaseException as msg:
             logging.CyberCPLogFileWriter.writeToFile(
                 "We had errors while creating DKIM record for: " + domain + ". Error message: " + str(msg))
 
@@ -509,7 +509,7 @@ class DNS:
                 if ProcessUtilities.decideDistro() == ProcessUtilities.ubuntu:
                     command = 'sudo systemctl restart pdns'
                     ProcessUtilities.executioner(command)
-        except BaseException, msg:
+        except BaseException as msg:
             logging.CyberCPLogFileWriter.writeToFile(str(msg) + " [createDNSRecord]")
 
     @staticmethod
