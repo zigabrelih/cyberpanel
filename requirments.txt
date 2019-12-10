@@ -9,7 +9,6 @@ certbot==0.21.1
 certifi==2018.4.16
 cffi==1.11.5
 chardet==3.0.4
-ConfigArgParse==0.13.0
 cryptography==2.8
 decorator==3.4.0
 docker==3.6.0
