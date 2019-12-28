@@ -384,13 +384,13 @@ milter_default_action = accept
                 FNULL = open(os.devnull, 'w')
 
                 if getpass.getuser() == 'root':
-                    command = "sudo mkdir " + mailUtilities.cyberPanelHome
+                    command = "sudo mkdir -p " + mailUtilities.cyberPanelHome
                     subprocess.call(shlex.split(command), stdout=FNULL)
 
                     command = "sudo chown -R cyberpanel:cyberpanel " + mailUtilities.cyberPanelHome
                     subprocess.call(shlex.split(command), stdout=FNULL)
                 else:
-                    command = "sudo mkdir " + mailUtilities.cyberPanelHome
+                    command = "sudo mkdir -p " + mailUtilities.cyberPanelHome
                     ProcessUtilities.executioner(command)
 
                     command = "sudo chown -R cyberpanel:cyberpanel " + mailUtilities.cyberPanelHome
